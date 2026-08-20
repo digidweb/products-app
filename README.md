@@ -1,4 +1,4 @@
-# ProductsApp 📦
+# Products App 📦
 
 > A full-stack product management application built with a decoupled Ruby on Rails API and React frontend.
 
