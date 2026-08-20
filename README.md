@@ -4,7 +4,7 @@
 
 Products App is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails backend through RESTful JSON API.
 
-The project focus on full-stack integration between a Rails API backend and a modern JavaScript frontend, including **API design, database persistence, CORS configuration, and client-side application development**.
+The project focus on full-stack integration between a Rails API backend and a modern JavaScript frontend, including **API design, database persistence, CORS configuration, and client-side application development**.⚙️ 
 
 ## ✨ Features
 
@@ -65,7 +65,7 @@ The React application is responsible for the user interface and communicates wit
 │                     |
 |   localhost:3000    │
 │                     │
-└──────────┬──────────┘
+└──────────┬──────────┘⚙️ 
            │
            │ HTTP / JSON
            │
@@ -90,11 +90,11 @@ The React application is responsible for the user interface and communicates wit
 │                     │
 └─────────────────────┘
 ```
-
+⚙️ 
 This separation allows the frontend and backend to evolve independently while communicating through a clearly defined API boundary.
 
-🧠 Technical Highlights
-REST API & Versioning
+## 🧠 Technical Highlights
+### REST API & Versioning
 
 The Rails backend exposes product resources through RESTful endpoints under:
 
@@ -123,11 +123,11 @@ CORS
 
 Because the frontend and backend run as independent applications during development, the Rails API is configured with rack-cors to allow cross-origin communication.
 
-Database Persistence
+### Database Persistence
 
 Products are persisted in PostgreSQL through Rails Active Record, with database changes managed through Rails migrations.
 
-🔌 API
+## 🔌 API
 
 The main product endpoints follow standard REST conventions:
 
@@ -154,7 +154,7 @@ Content-Type: application/json
 
 The API returns JSON responses and uses HTTP status codes to communicate successful operations and validation failures.
 
-🧪 Testing
+## 🧪 Testing
 
 Automated testing is an important next step for the project.
 
@@ -182,7 +182,7 @@ Or run with Docker in a containerized environment.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/digidweb/products-app.git
+git clone https://github.com/digidweb/products-app.git⚙️ 
 cd products-app
 ```
 
@@ -242,13 +242,13 @@ The React application will communicate with the Rails API running on port `3001`
 
 The project also includes Docker support.
 
-Build the Docker image:
+### 1.Build the Docker image:
 
 ```bash
 docker build -t productsapp .
 ```
 
-Run the container:
+### 2. Run the container:
 
 ```bash
 docker run -p 3001:3001 productsapp
@@ -285,6 +285,6 @@ ProductsApp is part of a portfolio focused on Ruby on Rails backend and full-sta
 
 The project complements Rails-focused applications by demonstrating practical experience with:
 
-Ruby on Rails · REST APIs · PostgreSQL · React · JavaScript · Axios · Vite · Docker
+**Ruby on Rails · REST APIs · PostgreSQL · React · JavaScript · Axios · Vite · Docker**
 
 The project demonstrates ability to work with a different architecture from a traditional Rails application: instead of rendering the frontend through Rails views, the Rails application exposes a JSON API consumed by an independent React client.
