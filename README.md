@@ -266,49 +266,6 @@ To recreate the seed data:
 rails db:seed
 ```
 
-This makes it easier to populate the development database with realistic data while developing and testing the application.
-
-## 🔄 Data Flow
-
-A typical request follows this flow:
-
-```text
-User interaction
-      ↓
-React component
-      ↓
-HTTP request
-      ↓
-Rails API controller
-      ↓
-Active Record model
-      ↓
-PostgreSQL
-      ↓
-JSON response
-      ↓
-React UI update
-```
-
-This architecture provides practical experience with the complete lifecycle of a full-stack request, from user interaction to database persistence and back to the frontend.
-
-## 💡 Technical Takeaways
-
-The main goal of this project was to gain hands-on experience with the integration between a Rails backend and an independent React frontend.
-
-Key areas explored include:
-
-* Designing RESTful JSON endpoints
-* Building a Rails API-only application
-* Connecting React to a backend API
-* Handling CORS between separate applications
-* Persisting application data with PostgreSQL
-* Managing database migrations
-* Generating development data with Faker
-* Structuring a React application with reusable components
-* Containerizing the backend with Docker
-* Separating frontend and backend responsibilities
-
 ## 🔮 Potential Improvements
 
 If continuing the project, the following improvements would be natural next steps:
