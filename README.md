@@ -2,20 +2,23 @@
 
 > A full-stack product management application built with a decoupled Ruby on Rails API and React frontend.
 
-ProductsApp is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails API through RESTful JSON endpoints.
+ProductsApp is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails backend through RESTful JSON API.
 
-The project was built to practice the integration between a Rails API backend and a modern JavaScript frontend, including API design, database persistence, CORS configuration, and client-side application development.
+The project focus on full-stack integration between a Rails API backend aability to worknd a modern JavaScript frontend, including API design, database persistence, CORS configuration, and client-side application development.
 
 ## ✨ Features
 
-* 📦 Product listing and management
-* 🔌 RESTful JSON API built with Ruby on Rails
+* 📦 Product creation, listing, updating, and deletion
+* 🔌 RESTful JSON API
+* 🔢 Versioned API under /api/v1
 * ⚛️ Decoupled React frontend
+* 🔄 React ↔ Rails API integration
 * 🗄️ PostgreSQL persistence
-* 🔄 Cross-origin communication between React and Rails
-* 🌱 Seed data generation with Faker
+* 🌐 CORS configuration
+* 🧭 Client-side routing with React Router
+* ⚡ Vite development environment
+* 🌱 Development data generation with Faker
 * 🐳 Docker support
-* 🏗️ Separate backend and frontend applications
 
 ## 🛠️ Tech Stack
 
@@ -24,20 +27,25 @@ The project was built to practice the integration between a Rails API backend an
 * **Ruby 3.1.2**
 * **Ruby on Rails 7.1.5**
 * **Rails API mode**
-* **PostgreSQL**
 * **Active Record**
-* **rack-cors**
-* **Faker**
-* **Puma**
 
 ### Frontend
 
-* **React**
-* **JavaScript**
-* **npm**
+* React 18
+* JavaScript
+* Vite
+* Axios
+* React Router
 
-### Infrastructure
+### Databaseability to work
 
+* **PostgreSQL**
+
+### Development & Infrastructure
+
+* **rack-cors**
+* **Faker**
+* **Puma**
 * **Docker**
 
 ## 🏗️ Architecture
@@ -49,8 +57,13 @@ The React application is responsible for the user interface and communicates wit
 ```text
 ┌─────────────────────┐
 │                     │
-│   React Frontend    │
-│    localhost:3000   │
+│   React Frontend    |
+|                     |
+|    React + Vite     |
+|        Axios        |
+|     React Router    │
+│                     |
+|   localhost:3000    │
 │                     │
 └──────────┬──────────┘
            │
@@ -59,8 +72,12 @@ The React application is responsible for the user interface and communicates wit
            ▼
 ┌─────────────────────┐
 │                     │
-│    Rails API        │
-│    localhost:3001   │
+│      Rails API      │
+│                     |
+|       /api/v1       |
+|     Controllers     |
+|                     |
+|    localhost:3001   │
 │                     │
 └──────────┬──────────┘
            │
@@ -74,51 +91,84 @@ The React application is responsible for the user interface and communicates wit
 └─────────────────────┘
 ```
 
-This separation allows the frontend and backend to evolve independently while communicating through a defined API boundary.
+This separation allows the frontend and backend to evolve independently while communicating through a clearly defined API boundary.
 
-## 🔌 API
+🧠 Technical Highlights
+REST API & Versioning
 
-The Rails backend exposes JSON endpoints consumed by the React application.
+The Rails backend exposes product resources through RESTful endpoints under:
 
-The API is responsible for:
+/api/v1/products
 
-* Receiving HTTP requests
-* Validating and processing application data
-* Persisting products in PostgreSQL
-* Returning JSON responses to the frontend
+API versioning provides a clear boundary for future changes without coupling the frontend directly to an unversioned API.
 
-CORS is configured with **rack-cors** to allow the React development server to communicate with the Rails API running on a different port.
+Frontend / Backend Integration
 
-## 📁 Project Structure
+The React frontend consumes the Rails API through HTTP requests using Axios.
 
-```text
-productsApp/
-├── app/
-│   ├── controllers/       # API controllers and JSON responses
-│   └── models/            # Active Record models
-│
-├── client/                # React frontend
-│   └── src/
-│       ├── components/    # React components
-│       └── App.js         # Main React entry point
-│
-├── config/
-│   └── routes.rb          # API routes
-│
-├── db/
-│   ├── migrate/           # Database migrations
-│   └── seeds.rb           # Seed data generation
-│
-├── Dockerfile
-├── Gemfile
-└── package.json
-```
+React component
+      ↓
+Axios requestability to work
+      ↓
+Rails API
+      ↓
+Active Record
+      ↓
+PostgreSQL
+      ↓
+JSON response
+      ↓
+React UI
+CORS
+
+Because the frontend and backend run as independent applications during development, the Rails API is configured with rack-cors to allow cross-origin communication.
+
+Database Persistence
+
+Products are persisted in PostgreSQL through Rails Active Record, with database changes managed through Rails migrations.
+
+🔌 API
+
+The main product endpoints follow standard REST conventions:
+
+Method	Endpoint	Purpose
+GET	/api/v1/products	List products
+GET	/api/v1/products/:id	Retrieve a product
+POST	/api/v1/products	Create a product
+PATCH	/api/v1/products/:id	Update a product
+PUT	/api/v1/products/:id	Update a product
+DELETE	/api/v1/products/:id	Delete a product
+
+Example request:
+
+POST /api/v1/products
+Content-Type: application/json
+{
+  "product": {
+    "name": "Wireless Headphones",
+    "price": 199.90,
+    "stock_quantity": 25,
+    "description": "Bluetooth wireless headphones"
+  }
+}
+
+The API returns JSON responses and uses HTTP status codes to communicate successful operations and validation failures.
+
+🧪 Testing
+
+Automated testing is an important next step for the project.
+
+The backend can be extended with RSpec request/model tests, while the React application can use a dedicated JavaScript testing framework for component and integration tests.
+
+Example backend test command:
+
+bundle exec rspec
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Make sure you have installed:
 
 * Ruby 3.1.2
 * Rails 7.1.5
@@ -126,6 +176,8 @@ Make sure you have the following installed:
 * Node.js
 * npm
 * Bundler
+
+Or run with Docker in a containerized environment.
 
 ### 1. Clone the repository
 
@@ -156,7 +208,7 @@ Start the Rails API:
 rails server -p 3001
 ```
 
-The API will be available at:
+The Rails API will be available at:
 
 ```text
 http://localhost:3001
@@ -179,14 +231,10 @@ npm install
 Start the React development server:
 
 ```bash
-npm start
+npm run devability to work
 ```
 
-The frontend will be available at:
-
-```text
-http://localhost:3000
-```
+Vite will display the frontend development URL in the terminal.
 
 The React application will communicate with the Rails API running on port `3001`.
 
@@ -265,21 +313,21 @@ Key areas explored include:
 
 If continuing the project, the following improvements would be natural next steps:
 
-* Add automated tests for API endpoints and React components
-* Add request validation and standardized API error responses
-* Implement product creation, editing, and deletion through the React interface
-* Add product search and filtering
-* Add pagination to the API
+* Add automated request and model tests with RSpec
+* Add React component and integration tests
+* Add standardized API error responses
 * Add authentication and authorization
+* Add product search and filtering
 * Add API documentation with OpenAPI/Swagger
-* Add GitHub Actions for automated testing and code quality checks
-* Add production deployment for both frontend and backend
-* Add a dedicated API versioning strategy
+* Add GitHub Actions for CI
+* Add production deployment
 
-## 📄 Project Context
+📌 Portfolio Context
 
-ProductsApp is a personal full-stack project focused on practicing the integration of **Ruby on Rails API** with **React**.
+ProductsApp is part of a portfolio focused on Ruby on Rails backend and full-stack development.
 
-The project demonstrates a different architecture from a traditional Rails application: instead of rendering the frontend through Rails views, the Rails application exposes a JSON API consumed by an independent React client.
+The project complements Rails-focused applications by demonstrating practical experience with:
 
-This architecture provides practical experience with the responsibilities and communication boundaries between a backend API and a JavaScript frontend.
+Ruby on Rails · REST APIs · PostgreSQL · React · JavaScript · Axios · Vite · Docker
+
+The project demonstrates ability to work with a different architecture from a traditional Rails application: instead of rendering the frontend through Rails views, the Rails application exposes a JSON API consumed by an independent React client.
