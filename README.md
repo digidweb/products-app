@@ -1,10 +1,10 @@
 # Products App 📦
 
-> A full-stack product management application built with a decoupled Ruby on Rails API and React frontend.
+> A product management application
 
-ProductsApp is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails backend through RESTful JSON API.
+Products App is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails backend through RESTful JSON API.
 
-The project focus on full-stack integration between a Rails API backend aability to worknd a modern JavaScript frontend, including API design, database persistence, CORS configuration, and client-side application development.
+The project focus on full-stack integration between a Rails API backend and a modern JavaScript frontend, including **API design, database persistence, CORS configuration, and client-side application development**.
 
 ## ✨ Features
 
@@ -24,10 +24,10 @@ The project focus on full-stack integration between a Rails API backend aability
 
 ### Backend
 
-* **Ruby 3.1.2**
-* **Ruby on Rails 7.1.5**
-* **Rails API mode**
-* **Active Record**
+* Ruby
+* Ruby on Rails
+* Rails API mode
+* Active Record
 
 ### Frontend
 
@@ -39,14 +39,14 @@ The project focus on full-stack integration between a Rails API backend aability
 
 ### Databaseability to work
 
-* **PostgreSQL**
+* PostgreSQL
 
 ### Development & Infrastructure
 
-* **rack-cors**
-* **Faker**
-* **Puma**
-* **Docker**
+* rack-cors
+* Faker
+* Puma
+* Docker
 
 ## 🏗️ Architecture
 
