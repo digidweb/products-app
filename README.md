@@ -136,21 +136,22 @@ Products are persisted in PostgreSQL through Rails Active Record, with database 
 The main product endpoints follow standard REST conventions:
 
 ```text
-Method	Endpoint	Purpose
-GET	/api/v1/products	List products
-GET	/api/v1/products/:id	Retrieve a product
-POST	/api/v1/products	Create a product
-PATCH	/api/v1/products/:id	Update a product
-PUT	/api/v1/products/:id	Update a product
-DELETE	/api/v1/products/:id	Delete a product
+Method     Endpoint                Purpose
+GET        /api/v1/products        List products
+GET        /api/v1/products/:id    Retrieve a product
+POST       /api/v1/products        Create a product
+PATCH      /api/v1/products/:id    Update a product
+PUT        /api/v1/products/:id    Update a product
+DELETE     /api/v1/products/:id    Delete a product
 ```
 
 Example request:
 
-```json
+```text
 POST /api/v1/products
-
 Content-Type: application/json
+```
+```json
 {
   "product": {
     "name": "Wireless Headphones",
