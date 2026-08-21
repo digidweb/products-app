@@ -1,6 +1,6 @@
 # Products App 📦
 
-> A product management application
+> An app for product management
 
 Products App is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails backend through RESTful JSON API.
 
