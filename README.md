@@ -105,21 +105,22 @@ API versioning provides a clear boundary for future changes without coupling the
 Frontend / Backend Integration
 
 The React frontend consumes the Rails API through HTTP requests using Axios.
-
+```text
 React component
       ↓
 Axios requestability to work
       ↓
-Rails API
+  Rails API
       ↓
 Active Record
       ↓
-PostgreSQL
+ PostgreSQL
       ↓
 JSON response
       ↓
-React UI
-CORS
+  React UI
+    CORS
+```
 
 Because the frontend and backend run as independent applications during development, the Rails API is configured with rack-cors to allow cross-origin communication.
 
@@ -131,6 +132,7 @@ Products are persisted in PostgreSQL through Rails Active Record, with database 
 
 The main product endpoints follow standard REST conventions:
 
+```text
 Method	Endpoint	Purpose
 GET	/api/v1/products	List products
 GET	/api/v1/products/:id	Retrieve a product
@@ -138,6 +140,7 @@ POST	/api/v1/products	Create a product
 PATCH	/api/v1/products/:id	Update a product
 PUT	/api/v1/products/:id	Update a product
 DELETE	/api/v1/products/:id	Delete a product
+```
 
 Example request:
 
