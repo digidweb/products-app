@@ -170,8 +170,9 @@ Automated testing is an important next step for the project.
 The backend can be extended with RSpec request/model tests, while the React application can use a dedicated JavaScript testing framework for component and integration tests.
 
 Example backend test command:
-
+```text
 bundle exec rspec
+```
 
 ## 🚀 Getting Started
 
