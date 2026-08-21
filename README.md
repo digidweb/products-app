@@ -4,7 +4,7 @@
 
 Products App is a full-stack application that demonstrates how an independent React frontend can communicate with a Ruby on Rails backend through RESTful JSON API.
 
-The project focus on full-stack integration between a Rails API backend and a modern JavaScript frontend, including **API design, database persistence, CORS configuration, and client-side application development**.⚙️ 
+The project focus on full-stack integration between a Rails API backend and a modern JavaScript frontend, including **API design, database persistence, CORS configuration, and client-side application development**.
 
 ## ✨ Features
 
@@ -65,7 +65,7 @@ The React application is responsible for the user interface and communicates wit
 │                     |
 |   localhost:3000    │
 │                     │
-└──────────┬──────────┘⚙️ 
+└──────────┬──────────┘
            │
            │ HTTP / JSON
            │
@@ -90,7 +90,7 @@ The React application is responsible for the user interface and communicates wit
 │                     │
 └─────────────────────┘
 ```
-⚙️ 
+
 This separation allows the frontend and backend to evolve independently while communicating through a clearly defined API boundary.
 
 ## 🧠 Technical Highlights
@@ -98,13 +98,16 @@ This separation allows the frontend and backend to evolve independently while co
 
 The Rails backend exposes product resources through RESTful endpoints under:
 
+```text
 /api/v1/products
+```
 
 API versioning provides a clear boundary for future changes without coupling the frontend directly to an unversioned API.
 
 Frontend / Backend Integration
 
-The React frontend consumes the Rails API through HTTP requests using Axios.
+The React frontend consumes the Rails API through HTTP requests using Axios
+
 ```text
 React component
       ↓
@@ -144,7 +147,9 @@ DELETE	/api/v1/products/:id	Delete a product
 
 Example request:
 
+```json
 POST /api/v1/products
+
 Content-Type: application/json
 {
   "product": {
@@ -154,6 +159,7 @@ Content-Type: application/json
     "description": "Bluetooth wireless headphones"
   }
 }
+```
 
 The API returns JSON responses and uses HTTP status codes to communicate successful operations and validation failures.
 
@@ -185,7 +191,7 @@ Or run with Docker in a containerized environment.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/digidweb/products-app.git⚙️ 
+git clone https://github.com/digidweb/products-app.git
 cd products-app
 ```
 
@@ -282,7 +288,7 @@ If continuing the project, the following improvements would be natural next step
 * Add GitHub Actions for CI
 * Add production deployment
 
-📌 Portfolio Context
+## 📌 Portfolio Context
 
 ProductsApp is part of a portfolio focused on Ruby on Rails backend and full-stack development.
 
